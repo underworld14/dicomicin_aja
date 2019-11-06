@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./screenshoot/kumpulBlack.png" width="300"/><br>
+  <img src="./screenshoot/comic.png" width="300"/><br>
 </h1>
 
 ## Important
@@ -14,7 +14,7 @@ KOMIKIN AJA is a mobile-based comic reading application that can run on Android 
 ## Screenshots
 
 <p align="center">
-  <img src="./screenshoot/screenshoot.PNG" width="600" height="450" alt="Screenshoot Apps"/>
+  <img src="./screenshoot/screenshoot.PNG" width="700" height="450" alt="Screenshoot Apps"/>
 </p>
 
 ## Features
