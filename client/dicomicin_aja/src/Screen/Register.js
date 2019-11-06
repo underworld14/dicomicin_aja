@@ -1,23 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
-import axios from 'axios';
+import {axios, api_url} from '../api';
 import AsyncStorage from '@react-native-community/async-storage';
-import {
-  View,
-  Button,
-  Text,
-  Item,
-  Input,
-  Form,
-  Label,
-  Thumbnail,
-  Icon,
-  Container,
-  Content,
-} from 'native-base';
-import config from '../../config-env';
-
-import toonImg from '../Component/img/toon.jpg';
+import {View, Button, Text, Item, Input, Form, Label, Icon} from 'native-base';
 
 export default class Register extends Component {
   constructor(props) {
@@ -37,7 +22,7 @@ export default class Register extends Component {
   userRegister = () => {
     axios({
       method: 'POST',
-      url: `${config.API_URL}/register`,
+      url: `${api_url}/register`,
       data: {
         name: this.state.name,
         email: this.state.username,

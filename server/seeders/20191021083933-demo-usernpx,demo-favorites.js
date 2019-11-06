@@ -7,15 +7,45 @@ module.exports = {
       [
         {
           webtoons_id: "1",
-          users_id: "1"
+          users_id: "1",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
-          webtoons_id: "1",
-          users_id: "2"
+          webtoons_id: "3",
+          users_id: "1",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: "2",
-          users_id: "1"
+          users_id: "2",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          webtoons_id: "3",
+          users_id: "2",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          webtoons_id: "1",
+          users_id: "3",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          webtoons_id: "2",
+          users_id: "3",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          webtoons_id: "3",
+          users_id: "3",
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
@@ -23,12 +53,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
+    return queryInterface.bulkDelete("favorites", null, {});
   }
 };

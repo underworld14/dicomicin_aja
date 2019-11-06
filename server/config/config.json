@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "webtoon_new",
+    "database": "dicomicin",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -16,11 +16,11 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
+    "username": "iocvfpqqluhukz",
+    "password": "950c6c6c4ec1d019bab83875b8dc91712513bae8967d35385e04c91733e999c5",
+    "database": "d3nh9dug8bqavf",
+    "host": "ec2-174-129-252-255.compute-1.amazonaws.com",
+    "dialect": "postgres",
     "operatorsAliases": false
   }
 }

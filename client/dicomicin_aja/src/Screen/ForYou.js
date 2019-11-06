@@ -84,7 +84,7 @@ export class ForYou extends Component {
     const {toons, favorites} = this.props;
     return (
       <Container>
-        <Header searchBar style={styles.header}>
+        {/* <Header searchBar style={styles.header}>
           <Item rounded>
             <Input placeholder="Search Comics" />
             <Icon name="ios-search" />
@@ -92,10 +92,11 @@ export class ForYou extends Component {
           <Button transparent>
             <Text>Search</Text>
           </Button>
-        </Header>
+        </Header> */}
 
         <Content>
           <View style={styles.carousel}>
+            {/* <Icon name="ios-search" style={{posisition: 'absolute',}} /> */}
             <Carousel
               autoplay
               autoplayTimeout={5000}

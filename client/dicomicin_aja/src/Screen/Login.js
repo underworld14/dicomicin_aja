@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
-import axios from 'axios';
+import {StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {axios, api_url} from '../api';
 import AsyncStorage from '@react-native-community/async-storage';
 import {
   View,
@@ -13,9 +13,9 @@ import {
   Thumbnail,
   Icon,
 } from 'native-base';
-import config from '../../config-env';
 
 import toonImg from '../Component/img/toon.jpg';
+import comicin from '../assets/comic.png';
 
 export default class Login extends Component {
   constructor() {
@@ -34,7 +34,7 @@ export default class Login extends Component {
   userLogin = () => {
     axios({
       method: 'POST',
-      url: `${config.API_URL}/login`,
+      url: `${api_url}/login`,
       data: {
         email: this.state.username,
         password: this.state.password,
@@ -108,7 +108,7 @@ export default class Login extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.logo}>
-          <Thumbnail large source={toonImg} />
+          <Image source={comicin} style={{width: 200, height: 200}} />
           <Text style={styles.textLogo}> LOG IN </Text>
           <Text style={styles.textLogo2}>
             Login with Your Webtoon Account !!
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#00b01b',
   },
   logo: {
-    marginTop: 80,
+    marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },

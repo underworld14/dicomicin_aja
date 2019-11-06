@@ -1,5 +1,4 @@
-import axios from 'axios';
-import config from '../../config-env';
+import {axios, api_url} from '../api';
 
 export const fetchMyWebtoons = res => {
   return {
@@ -34,7 +33,7 @@ export const getMyWebtoons = (userId, token) => {
         'content-type': 'application/json',
         authorization: `Bearer ${token}`,
       },
-      url: `${config.API_URL}/user/${userId}/webtoons`,
+      url: `${api_url}/user/${userId}/webtoons`,
     })
       .then(res => {
         dispatch(fetchMyWebtoonsFulfilled(res.data));

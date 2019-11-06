@@ -7,50 +7,75 @@ module.exports = {
       [
         {
           webtoons_id: 1,
-          episode: "Eps 1 Opening",
+          episode: "Pasutri Gaje 1",
           image:
-            "https://scontent-sea1-1.cdninstagram.com/vp/625a0dd962cb1afad204a65f47bf73fa/5DFC30CC/t51.2885-15/sh0.08/e35/s640x640/66377883_1282231408635842_2175570115125759227_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCBMKFa4pno2AuG9mihACipEDXdojIIrh9cXWQtJ5huI12MPey",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: 1,
-          episode: "Eps 2 The New Adventure",
+          episode: "Pasutri Gaje 2",
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Nr0ioPWAWvgzdutUk1DbFltHxaZ17l4aUJbHZLAlY116QoMc"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4HKnVIe2yB41TNHOwqtFnTx91_4onkyOaBW6zDXM9Rkez2kOU",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: 1,
-          episode: "Eps 3 Mind Blown",
-          image: "https://comics.tahilalats.com/avatars/avatar-16.png"
+          episode: "Pasutri Gaje 3",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkBPVALFt-q1CBvL7hTVjfTJE6eLQzaCOiMoxUbDr3dKePXXUu",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: 2,
-          episode: "Eps 1 Pernikahan",
+          episode: "Tahi Lalat 1",
           image:
-            "https://i.pinimg.com/originals/0a/7a/77/0a7a77888cfb16ac40c2e1a5ac6673fc.jpg"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTrZXSe5E0MnApOgvsfJroHvu5zQh14LAFgPyCtbrCNbgfo2o4t",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: 2,
-          episode: "Eps 2 Kasih Sayang",
+          episode: "Tahi Lalat 2",
           image:
-            "https://i.pinimg.com/originals/4b/8c/b5/4b8cb5fdfd014f65086924509da5fdb8.jpg"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgI4F7M3Qv41X54Z6bxFPTB1pXRUHtKZ0TgCiP2-n1Ol5jx-Y0",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: 2,
-          episode: "Eps 3 Malam Pertama",
+          episode: "Tahi Lalat 3",
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHyJo7HqhStzIYq7QoT6W6o_RI2vrh0dRNKIempwI5oj9_z30n1A"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjjLrSdXJb44buhmZjZEvxaIRJ8I0YlqhxoUOBGtj7rLY-7-h8",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: 3,
-          episode: "Eps 1 Opening",
+          episode: "Boruto 1",
           image:
-            "https://pbs.twimg.com/profile_images/745520594775482368/kU2IgSqG_400x400.jpg"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQiKKuSjaVmylCvNXR9Jj-aTZkBeRNy4UmL8Kr7QwEDIw4DEpxw",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           webtoons_id: 3,
-          episode: "Eps 2 Kisah Cinta",
+          episode: "Boruto 2",
           image:
-            "https://i.pinimg.com/originals/ea/6e/2c/ea6e2c6f4ef65a11c0ebb566f11526b9.jpg"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdLhMbn3UXg6iR9Qhi5qYOrDzWe8PNmT66R-sW1b1fpmzN1nkl",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          webtoons_id: 3,
+          episode: "Boruto 3",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkiK_9mRnMOoHzoiO_aReVpcaiqKbBlCQtJdBuFQb6wzl7NOQ7",
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
