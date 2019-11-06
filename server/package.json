@@ -1,0 +1,25 @@
+{
+  "name": "backendwebtoon",
+  "version": "1.0.0",
+  "description": "BackEnd_for_webtoon",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "npx sequelize db:migrate"
+  },
+  "author": "Yusril Izza",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-group-routes": "^1.1.0",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^1.7.0",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.19.6",
+    "sequelize-cli": "^5.5.1"
+  }
+}
