@@ -16,16 +16,13 @@ import {
   Button,
   Icon,
   Text,
-  Item,
-  Input,
   View,
   Row,
 } from 'native-base';
-
+import * as actionsToons from '../_redux/_actions/webtoons';
+import * as actionsFavs from '../_redux/_actions/favorites';
 import AsyncStorage from '@react-native-community/async-storage';
 import {connect} from 'react-redux';
-import {getAllToons} from '../_actions/Toons';
-import {getFavToons} from '../_actions/Favorites';
 
 const BannerWidth = Dimensions.get('window').width;
 const BannerHeight = 260;
@@ -41,8 +38,8 @@ export class ForYou extends Component {
 
   async componentDidMount() {
     await this.getIdentity();
-    await this.renderToon();
-    await this.renderFavorite();
+    await this.getToons();
+    await this.getFavorites();
   }
 
   async getIdentity() {
@@ -59,14 +56,14 @@ export class ForYou extends Component {
     });
   }
 
-  renderToon = () => {
-    this.props.getAllToons();
+  getToons = () => {
+    this.props.handleGetToons();
   };
 
-  renderFavorite = () => {
-    const id = this.state.id;
+  getFavorites = () => {
+    const userId = this.state.id;
     const token = this.state.token;
-    this.props.getFavToons(id, token);
+    this.props.handleGetFavs(token, userId);
   };
 
   renderPage(image, index) {
@@ -81,19 +78,9 @@ export class ForYou extends Component {
   }
 
   render() {
-    const {toons, favorites} = this.props;
+    const {webtoons, favorites} = this.props;
     return (
       <Container>
-        {/* <Header searchBar style={styles.header}>
-          <Item rounded>
-            <Input placeholder="Search Comics" />
-            <Icon name="ios-search" />
-          </Item>
-          <Button transparent>
-            <Text>Search</Text>
-          </Button>
-        </Header> */}
-
         <Content>
           <View style={styles.carousel}>
             {/* <Icon name="ios-search" style={{posisition: 'absolute',}} /> */}
@@ -103,7 +90,7 @@ export class ForYou extends Component {
               loop
               index={0}
               pageSize={BannerWidth}>
-              {toons.data.map((image, index) =>
+              {webtoons.data.map((image, index) =>
                 this.renderPage(image.image, index),
               )}
             </Carousel>
@@ -115,10 +102,10 @@ export class ForYou extends Component {
 
             <ScrollView horizontal={true}>
               {favorites.data.map(image => (
-                <View style={styles.horizon} key={image.image}>
+                <View style={styles.horizon} key={image.id}>
                   <TouchableOpacity
                     onPress={() =>
-                      this.props.navigation.navigate('DetailScreen', {
+                      this.props.navigation.navigate('Episodes', {
                         picture: image.webtoonsId.image,
                         title: image.webtoonsId.title,
                         toonId: image.webtoons_id,
@@ -130,12 +117,10 @@ export class ForYou extends Component {
                         style={styles.scrolimg}
                       />
                       <Text style={styles.scroltxt}>
-                        {' '}
-                        {image.webtoonsId.title}{' '}
+                        {image.webtoonsId.title}
                       </Text>
                       <Text style={styles.scroltxt2}>
-                        {' '}
-                        {image.webtoonsId.genre}{' '}
+                        {image.webtoonsId.genre}
                       </Text>
                     </View>
                   </TouchableOpacity>
@@ -146,11 +131,11 @@ export class ForYou extends Component {
 
           <View styles={styles.allcon}>
             <Text style={styles.textAll}> All Comics </Text>
-            {toons.data.map(image => (
+            {webtoons.data.map(image => (
               <View key={image.image} style={styles.bundle2}>
                 <TouchableOpacity
                   onPress={() =>
-                    this.props.navigation.navigate('DetailScreen', {
+                    this.props.navigation.navigate('Episodes', {
                       picture: image.image,
                       title: image.title,
                       toonId: image.id,
@@ -193,14 +178,17 @@ export class ForYou extends Component {
 
 const mapStateToProps = state => {
   return {
-    toons: state.toons,
+    webtoons: state.webtoons,
     favorites: state.favorites,
   };
 };
 
-const mapDispatchToProps = {
-  getAllToons,
-  getFavToons,
+const mapDispatchToProps = dispatch => {
+  return {
+    handleGetToons: () => dispatch(actionsToons.handleGetToons()),
+    handleGetFavs: (token, userId) =>
+      dispatch(actionsFavs.handleGetFavs(token, userId)),
+  };
 };
 
 export default connect(

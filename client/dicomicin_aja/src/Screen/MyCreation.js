@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
 import {Container, Content, Icon, Text, View, Row, Fab} from 'native-base';
-import config from '../../config-env';
 import AsyncStorage from '@react-native-community/async-storage';
-import Axios from 'axios';
 import {connect} from 'react-redux';
-import {getMyWebtoons} from '../_actions/MyWebtoon';
 
 class MyCreation extends Component {
   static navigationOptions = ({navigation}) => {
@@ -102,13 +99,11 @@ class MyCreation extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    mywebtoons: state.mywebtoons,
-  };
+  return {};
 };
 
-const mapDispatchToProps = {
-  getMyWebtoons,
+const mapDispatchToProps = dispatch => {
+  return {};
 };
 
 export default connect(

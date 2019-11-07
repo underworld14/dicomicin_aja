@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
 import {View, Text, Content, Container, Row} from 'native-base';
 import {connect} from 'react-redux';
-import {getAllDetails} from '../_actions/Details';
+
+import * as actionsEps from '../_redux/_actions/episodes';
 
 class DetailScreen extends Component {
   constructor(props) {
@@ -14,16 +15,17 @@ class DetailScreen extends Component {
   }
 
   async componentDidMount() {
-    await this.renderDetails();
+    await this.getAllEpisodes();
+    console.log('Sudah di render');
   }
 
-  renderDetails() {
+  getAllEpisodes() {
     const id = this.state.id;
-    this.props.getAllDetails(id);
+    this.props.handleGetEps(id);
   }
 
   render() {
-    const {details} = this.props;
+    const {episodes} = this.props;
     return (
       <Container>
         <Content>
@@ -37,13 +39,13 @@ class DetailScreen extends Component {
           </Text>
 
           <FlatList
-            data={details.data}
+            data={episodes.data}
             renderItem={({item}) => (
               <View style={styles.conView} key={item.id}>
                 <Row>
                   <TouchableOpacity
                     onPress={() =>
-                      this.props.navigation.navigate('DetailEps', {
+                      this.props.navigation.navigate('Pages', {
                         eps: item.episode,
                         idEps: item.id,
                         toonId: item.webtoons_id,
@@ -68,12 +70,14 @@ class DetailScreen extends Component {
 
 const mapStateToProps = state => {
   return {
-    details: state.details,
+    episodes: state.episodes,
   };
 };
 
-const mapDispatchToProps = {
-  getAllDetails,
+const mapDispatchToProps = dispatch => {
+  return {
+    handleGetEps: toonId => dispatch(actionsEps.handleGetEps(toonId)),
+  };
 };
 
 export default connect(

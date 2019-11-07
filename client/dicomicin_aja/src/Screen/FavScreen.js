@@ -16,7 +16,6 @@ import {
 } from 'native-base';
 import AsyncStorage from '@react-native-community/async-storage';
 import {connect} from 'react-redux';
-import {getFavToons} from '../_actions/Favorites';
 
 class FavScreen extends Component {
   constructor() {
@@ -123,13 +122,11 @@ class FavScreen extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    favorites: state.favorites,
-  };
+  return {};
 };
 
-const mapDispatchToProps = {
-  getFavToons,
+const mapDispatchToProps = () => {
+  return {};
 };
 
 export default connect(

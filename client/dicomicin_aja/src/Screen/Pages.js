@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {StyleSheet, Image, FlatList} from 'react-native';
 import {View, Content, Container} from 'native-base';
 import {connect} from 'react-redux';
-import {getAllEpisodes} from '../_actions/Episodes';
+
+import * as actionsPages from '../_redux/_actions/pages';
 
 class DetailEps extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class DetailEps extends Component {
   }
 
   async componentDidMount() {
-    await this.renderEpisodes();
+    await this.getAllPages();
   }
 
   static navigationOptions = ({navigation}) => {
@@ -30,21 +31,21 @@ class DetailEps extends Component {
     };
   };
 
-  renderEpisodes() {
+  getAllPages() {
     const idToon = this.state.idToon;
     const idEps = this.state.idEps;
-    this.props.getAllEpisodes(idToon, idEps);
+    this.props.handleGetPages(idToon, idEps);
   }
 
   render() {
-    const {episodes} = this.props;
+    const {pages} = this.props;
     return (
       <Container>
         <Content>
           <FlatList
-            data={episodes.data}
+            data={pages.data}
             renderItem={({item}) => (
-              <View style={styles.comiccon} key={episodes.data.key}>
+              <View style={styles.comiccon} key={item.id}>
                 <Image style={styles.comicImage} source={{uri: item.image}} />
               </View>
             )}
@@ -58,12 +59,15 @@ class DetailEps extends Component {
 
 const mapStateToProps = state => {
   return {
-    episodes: state.episodes,
+    pages: state.pages,
   };
 };
 
-const mapDispatchToProps = {
-  getAllEpisodes,
+const mapDispatchToProps = dispatch => {
+  return {
+    handleGetPages: (toonId, epsId) =>
+      dispatch(actionsPages.handleGetPages(toonId, epsId)),
+  };
 };
 
 export default connect(

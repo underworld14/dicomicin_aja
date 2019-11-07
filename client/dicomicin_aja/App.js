@@ -8,8 +8,8 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Login from './src/Screen/Login';
 import Register from './src/Screen/Register';
 import ForYou from './src/Screen/ForYou';
-import DetailScreen from './src/Screen/DetailScreen';
-import DetailEps from './src/Screen/DetailEps';
+import Episodes from './src/Screen/Episodes';
+import Pages from './src/Screen/Pages';
 import FavScreen from './src/Screen/FavScreen';
 import Profile from './src/Screen/Profile';
 import EditProfile from './src/Screen/EditProfile';
@@ -66,9 +66,9 @@ const signedIn = createStackNavigator(
       title: 'ForYou',
       navigationOptions: {header: null},
     },
-    DetailScreen: {
-      screen: DetailScreen,
-      title: 'DetailScreen',
+    Episodes: {
+      screen: Episodes,
+      title: 'Episodes',
       navigationOptions: () => ({
         title: 'Detail Webtoon',
         headerStyle: {
@@ -109,8 +109,8 @@ const signedIn = createStackNavigator(
       title: 'EditProfile',
     },
 
-    DetailEps: {
-      screen: DetailEps,
+    Pages: {
+      screen: Pages,
       title: 'DetailEps',
     },
 
